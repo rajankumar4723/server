@@ -12,7 +12,6 @@ const schema = new mongoose.Schema({
   message: {
     required: true,
     type: String,
-    select: false,
   },
   createdAt: {
     type: Date,
