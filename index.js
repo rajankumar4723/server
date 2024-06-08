@@ -17,7 +17,7 @@ connectDB();//Database connect
 app.use(express.json());
 
 // Use the user route
-app.use("/api/v1/user", router);
+app.use("/api/v1/", router);
 
 app.use(
     cors({
