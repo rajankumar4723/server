@@ -8,8 +8,8 @@ const port = 3000;
 const app = express();
 
 config({
-    path: "./database/config.env",
-  });
+  path: "./database/config.env",
+});
 
 connectDB();//Database connect
 
@@ -20,20 +20,19 @@ app.use(express.json());
 app.use("/api/v1/", router);
 
 app.use(
-    cors({
-      origin: [process.env.FRONTEND_URL],
-      methods: ["GET", "POST", "PUT", "DELETE"],
-      withCredentials: true,
-      // credentials: true,
-    })
-  );
+  cors({
+    origin: [process.env.FRONTEND_URL],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
 
 app.get('/', (req, res) => {
-    res.send("Hello WORLD");
-    // console.log("Hello World");
+  res.send("Hello WORLD");
+  // console.log("Hello World");
 })
 
-app.listen(port,()=>{
-    console.log("Server is Working");
+app.listen(port, () => {
+  console.log("Server is Working");
 })
